@@ -1,0 +1,134 @@
+﻿<Page
+    x:Class="AcceF.Tools"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AcceF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row ="0" Text="Outils" FontSize="22" HorizontalAlignment="Center"></TextBlock>
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.Resources>
+                <SolidColorBrush x:Key="brush" Color="Gray"/>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0"  Text="Compétences:" FontSize="20" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <Grid Grid.Column="1" Grid.Row="0"   Name="Skills_grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Modifier" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Ou" FontSize="18" Padding="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Créer" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <ComboBox  Grid.Row="1" Grid.Column="0" Tag="0" Name="Skills_list" Width="200" FontSize="18"  Margin="20 5 20 20" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="List_SelectionChanged" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto">
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Row="1" Grid.Column="2"  Tag="0" FontSize="20"  Margin="20 5 20 20" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Content="&#xE710;" Click="Add_Click"></Button>
+            </Grid>
+            <TextBlock Grid.Column="0" Grid.Row="1"  Text="Produits:" FontSize="20" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <Grid Grid.Column="1" Grid.Row="1"   Name="Products_grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Modifier" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Ou" FontSize="18" Padding="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Créer" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <ComboBox  Grid.Row="1" Grid.Column="0" Tag="1" Name="Products_list" Width="200" FontSize="18"  Margin="20 5 20 20" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="List_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto">
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Row="1" Grid.Column="2"  Tag="1" FontSize="20"  Margin="20 5 20 20" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Content="&#xE710;" Click="Add_Click"></Button>
+            </Grid>
+            <TextBlock Grid.Column="0" Grid.Row="2"  Text="Structures:" FontSize="20" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <Grid Grid.Column="1" Grid.Row="2"   Name="Structures_grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Modifier" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Ou" FontSize="18" Padding="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Créer" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <ComboBox  Grid.Row="1" Grid.Column="0" Tag="2" Name="Structures_list" Width="200" FontSize="18"  Margin="20 5 20 20" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="List_SelectionChanged" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto">
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Row="1" Grid.Column="2"  Tag="2" FontSize="20"  Margin="20 5 20 20" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Content="&#xE710;" Click="Add_Click"></Button>
+            </Grid>
+            <TextBlock Grid.Column="0" Grid.Row="3"   Text="Machines:" FontSize="20" FontWeight="Bold" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <Grid Grid.Column="1" Grid.Row="3"   Name="Machines_grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Modifier" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Ou" FontSize="18" Padding="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Créer" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <ComboBox  Grid.Row="1" Grid.Column="0" Tag="3" Name="Machines_list" Width="200" FontSize="18"  Margin="20 5 20 20" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="List_SelectionChanged" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto">
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Row="1" Grid.Column="2"  Tag="3" FontSize="20"  Margin="20 5 20 20" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Content="&#xE710;" Click="Add_Click"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+   
+</Page>

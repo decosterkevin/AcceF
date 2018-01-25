@@ -1,0 +1,45 @@
+﻿<ContentDialog
+x:Class="AcceF.MyCustomContentDialogOrga"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+x:Name="dialog"
+Title="Remplire les informations sur l'organisateur">
+
+    <StackPanel Orientation="Vertical">
+        <Grid Name="Grid_Orga" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Nom" Width="200" Grid.Row="0" Grid.Column="0"></TextBlock>
+            <TextBox Text="{Binding Name, Mode=TwoWay}" Width="200" Grid.Row="0" Grid.Column="1"></TextBox>
+            <TextBlock Text="Prénom" Grid.Row="1" Grid.Column="0" Margin="0 5 0 0"></TextBlock>
+            <TextBox Text="{Binding Surname, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="0 5 0 0"></TextBox>
+            <TextBlock Text="Téléphone" Grid.Row="2" Grid.Column="0" Margin="0 5 0 0"></TextBlock>
+            <TextBox Text="{Binding Phone_number1, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Margin="0 5 0 0"></TextBox>
+            <TextBlock Text="Email" Grid.Row="3" Grid.Column="0" Margin="0 5 0 0"></TextBlock>
+            <TextBox Text="{Binding Email, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" Margin="0 5 0 0"></TextBox>
+            <TextBlock Text="Status" Grid.Row="4" Grid.Column="0" Margin="0 5 0 0"></TextBlock>
+            <TextBox Text="{Binding Status, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" Margin="0 5 0 0"></TextBox>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="OK" HorizontalAlignment="Center" Click="Ok_Click" Margin="10"></Button>
+            <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Center" Click="Cancel_Click" Margin="10"></Button>
+        </Grid>
+        
+    </StackPanel>
+</ContentDialog>

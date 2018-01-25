@@ -1,0 +1,39 @@
+﻿<ContentDialog
+x:Class="AcceF.MyCustomContentDialogParty"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+xmlns:local="using:AcceF"
+x:Name="dialog"
+Title="List des fetes:">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel.Resources>
+            <local:BrushColorConverter x:Key="BConverter"></local:BrushColorConverter>
+        </StackPanel.Resources>
+        <ListView Name="listParty"
+                  IsItemClickEnabled="True"
+                  IsSwipeEnabled="true"
+                  SelectionMode="Single"
+                  ItemClick="Item_Click"
+                  HorizontalAlignment="Center"
+                  HorizontalContentAlignment="Center"
+                  MaxHeight="250"
+                  ScrollViewer.HorizontalScrollMode="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.VerticalScrollMode="Enabled"
+                  >
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" TextAlignment="Center" Foreground="{Binding Accepted, Converter={StaticResource BConverter}}" Margin="5"/>
+              
+
+            </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Annuler" HorizontalAlignment="Center" Click="Cancel_Click"></Button>
+    </StackPanel>
+</ContentDialog>
